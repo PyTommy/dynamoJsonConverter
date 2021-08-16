@@ -14,7 +14,7 @@ This repository help you to convert dynamoDB items file exported on AWS Console 
    npm run dynamoJson:csv
    ```
 
-Then, output will be in "./src/outputs/fromJsonLines.csv"
+Then, output will be in "./src/outputs/csv/fromDynamoJson.csv"
 
 ### DynamoDB.json(json lines) => json
 

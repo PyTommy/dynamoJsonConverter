@@ -14,7 +14,7 @@ const main = () => {
 	const dynamoItems = rowJsonLinesToObjcts(rawdata);
 	const items = dynamoItemsToJsItems(dynamoItems);
 	const csv = itemsToCsv(items);
-	writeFile('fromJsonLines.csv', csv);
+	writeFile('/csv/fromDynamoJson.csv', csv);
 };
 
 main();
