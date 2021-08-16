@@ -7,7 +7,7 @@ import {
 	writeFile,
 } from '../utils';
 const rawdata = String(
-	fs.readFileSync(path.resolve(__dirname, '../inputs/jsonLines.json'))
+	fs.readFileSync(path.resolve(__dirname, '../inputs/dynamo.json'))
 );
 
 const main = () => {
