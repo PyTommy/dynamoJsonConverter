@@ -1,0 +1,20 @@
+{
+  "name": "dynamojsonconverter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jsonLines:csv": "ts-node ./src/converters/json_lines_to_csv.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.6.1",
+    "prettier": "2.3.2",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.968.0"
+  }
+}

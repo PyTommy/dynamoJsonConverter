@@ -1,0 +1,3 @@
+application_id,application_status,count,extraIds,ids,map1
+"1","CANCELED",1,,["el1"|"el2"],{"prop1":"thisisprop1"}
+"1","APPLIED",1,["el1"|"el2"],,{"prop1":"thisisprop1"}

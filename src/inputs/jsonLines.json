@@ -1,0 +1,2 @@
+{"Item":{"application_id":{"S":"1"},"application_status":{"S":"CANCELED"},"count":{"N":"1"},"ids":{"L":[{"S":"el1"},{"S":"el2"}]},"map1":{"M":{"prop1":{"S":"thisisprop1"}}}}}
+{"Item":{"application_id":{"S":"1"},"application_status":{"S":"APPLIED"},"count":{"N":"1"},"extraIds":{"L":[{"S":"el1"},{"S":"el2"}]},"map1":{"M":{"prop1":{"S":"thisisprop1"}}}}}
