@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dynamoJson:csv": "ts-node ./src/converters/dynamo_json_to_csv.ts"
+    "dynamoJson:csv": "ts-node ./src/converters/dynamo_json_to_csv.ts",
+    "dynamoJson:json": "ts-node ./src/converters/dynamo_json_to_json.ts"
   },
   "author": "",
   "license": "ISC",

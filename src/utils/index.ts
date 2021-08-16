@@ -58,8 +58,73 @@ export const itemsToCsv = (items: { [key: string]: any }[]): string => {
 	}
 };
 
+export const itemsToJson = (
+	items: { [key: string]: any }[]
+): { json: string; typescript: string } => {
+	const json = JSON.stringify(items);
+	const typescript = generateTypescript(items);
+	return { json, typescript };
+
+	// =========
+	// Sub functions
+	// =========
+	function generateTypescript(items: { [key: string]: any }[]) {
+		const definition: { [key: string]: string } = {};
+		for (const item of items) {
+			for (const [key, value] of Object.entries(item)) {
+				if (!definition[key]) {
+				}
+				definition[key] = generateTypeDefinition(value);
+			}
+		}
+
+		const rows = ['export interface Item {'];
+		for (const [key, type] of Object.entries(definition)) {
+			rows.push(`\t${key}?: ${type}`);
+		}
+		rows.push('};');
+
+		return rows.join('\n');
+	}
+
+	function generateTypeDefinition(value: any): string {
+		const t = typeof value;
+		if (t === 'boolean') {
+			return `boolean`;
+		} else if (t === 'number') {
+			return `number`;
+		} else if (t === 'string') {
+			return `string`;
+		} else if (
+			t === 'object' &&
+			Array.isArray(value) &&
+			typeof value[0] === 'string'
+		) {
+			return `string[]`;
+		} else if (
+			t === 'object' &&
+			Array.isArray(value) &&
+			typeof value[0] === 'number'
+		) {
+			return `number[]`;
+		} else if (t === 'object' && Array.isArray(value)) {
+			return `any[]`;
+		} else if (value === null) {
+			return `null`;
+		} else if (t === undefined) {
+			return `undefined`;
+		} else {
+			return `any`;
+		}
+	}
+};
+
 export function writeFile(fileName: string, content: string) {
-	fs.writeFile(path.join(__dirname, '../outpus/', fileName), content, (err) => {
-		console.log(err || 'done');
-	});
+	fs.writeFile(
+		path.join(__dirname, '../outputs/', fileName),
+		content,
+		(err) => {
+			console.log(err || 'done');
+		}
+	);
 }

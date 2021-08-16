@@ -1,0 +1,1 @@
+[{"application_id":"1","application_status":"CANCELED","count":1,"ids":["el1","el2"],"map1":{"prop1":"thisisprop1"}},{"application_id":"1","application_status":"APPLIED","count":1,"extraIds":["el1","el2"],"map1":{"prop1":"thisisprop1"}}]
